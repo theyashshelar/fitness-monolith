@@ -9,6 +9,7 @@ import org.springframework.stereotype.Component;
 import javax.crypto.SecretKey;
 import java.security.Key;
 import java.util.Date;
+import java.util.List;
 
 @Component
 public class JwtUtils {
@@ -26,7 +27,7 @@ public class JwtUtils {
 
         return Jwts.builder()
                 .subject(userId)
-                .claim("roles", role)
+                .claim("roles", List.of(role))
                 .issuedAt(new Date())
                 .expiration(new Date(new Date().getTime() + jwtExpirationMs))
                 .signWith(key())
@@ -49,7 +50,7 @@ public class JwtUtils {
         return Keys.hmacShaKeyFor(Decoders.BASE64.decode(jwtSecret));
     }
 
-    public String getUsernameFromToken(String jwt) {
+    public String getUserIdFromToken(String jwt) {
         return Jwts.parser().verifyWith((SecretKey) key())
                 .build().parseSignedClaims(jwt)
                 .getPayload().getSubject();

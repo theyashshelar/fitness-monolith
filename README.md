@@ -111,5 +111,5 @@ http://localhost:8080/swagger-ui.html
 
 ## 👨‍💻 Author
 
-**Yash Shelar**
+* Yash Shelar
 ---

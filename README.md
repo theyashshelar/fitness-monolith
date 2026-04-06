@@ -100,6 +100,18 @@ http://localhost:8080/swagger-ui.html
 
 ---
 
+## 📸 API Documentation Preview
+
+![Swagger UI](assets/swagger.png)
+
+---
+
+## 🧪 API Testing (Postman)
+
+![Postman](assets/postman.png)
+
+---
+
 ## 🎯 Future Improvements
 
 * 🔁 Convert monolith to microservices architecture
